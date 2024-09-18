@@ -1,0 +1,48 @@
+//Biblioteca
+class Livro {
+   constructor(titulo, autor) {
+     this.titulo = titulo;
+     this.autor = autor;
+     this.disponivel = true; // Inicialmente, todos os livros estão disponíveis
+   }
+ 
+   emprestar() {
+     if (this.disponivel) {
+       this.disponivel = false;
+       console.log(`O livro "${this.titulo}" foi emprestado.`);
+     } else {
+       console.log(`O livro "${this.titulo}" já está emprestado.`);
+     }
+   }
+ 
+   devolver() {
+     if (!this.disponivel) {
+       this.disponivel = true;
+       console.log(`O livro "${this.titulo}" foi devolvido.`);
+     } else {
+       console.log(`O livro "${this.titulo}" já está disponível.`);
+     }
+   }
+ 
+   consultarDisponibilidade() {
+     if (this.disponivel) {
+       console.log(`O livro "${this.titulo}" está disponível para empréstimo.`);
+     } else {
+       console.log(`O livro "${this.titulo}" está emprestado.`);
+     }
+   }
+ }
+ // Criando um novo livro
+const livro1 = new Livro("O Pequeno Príncipe", "Antoine de Saint-Exupéry");
+
+// Emprestando o livro
+livro1.emprestar();
+
+// Consultando a disponibilidade
+livro1.consultarDisponibilidade();
+
+// Devolvendo o livro
+livro1.devolver();
+
+// Consultando a disponibilidade novamente
+livro1.consultarDisponibilidade();
