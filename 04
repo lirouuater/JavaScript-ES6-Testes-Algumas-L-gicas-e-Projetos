@@ -1,0 +1,43 @@
+// Crie uma classe que simule um carro; Propriedades: marca, cor, gasolina restante
+// Crie um método de dirigir o carro que vá diminuindo a gasolina gradativamente
+// Crie um método de abastecer para aumentar a gasolina gradativamente
+
+
+class Carro {
+
+   constructor(marca, cor, gasolinaRestante, consumo) {
+      this.marca = marca;
+      this.cor = cor;
+      this.gasolinaRestante = gasolinaRestante;
+      this.consumo = consumo;
+   }
+
+   dirigir(km) {
+
+      let litrosConsumidos = km / this.consumo;
+      this.gasolinaRestante -= litrosConsumidos;
+
+   }
+
+   abastecer(l) {
+
+      this.gasolinaRestante += 1;
+   }
+
+}
+
+let carro = new Carro("VK", "Cinza", 100, 14);
+
+console.log(carro);
+
+carro.dirigir(100);
+console.log(carro);
+
+carro.abastecer(500);
+carro.abastecer(500);
+carro.abastecer(500);
+carro.abastecer(500);
+carro.abastecer(500);
+
+
+console.log(carro);
